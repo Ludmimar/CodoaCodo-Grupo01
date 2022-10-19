@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;    
+}
+
+body {
+	background: #E5E5E5;
+} 
+
+.divider {
+    height: 0.4vw;
+    width: 20vw;
+    background-color: rgb(202, 135, 204);
+    margin-top: 0.5vw;
+    margin-bottom: 1.5vw; 
+}
+
+/*----------------- CABECERA --------------------------*/
+.header {
+    display:flex;    
+    justify-content: end;  
+    align-items: center;       
+    height:8vw; 
+    width: 100%;   
+	margin:10px;
+	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    border-radius: 10px;   
+    font-family: 'Source Code Pro', monospace;
+    z-index: 1001;
+}
+
+.menu_bar {
+	display:none;
+}
+
+.header .menuppal >ul {
+	list-style:none;
+	overflow:hidden;
+}
+
+.header .menuppal> ul> li {
+	float: left;
+    display: inline;
+    padding:10px;
+    color:rgb(0, 0, 0);
+	text-decoration:none;
+}
+
+.header .menuppal> ul> li> a{
+    font-size: 2vw;
+	display:block;
+	padding:15px;
+	color:rgb(0, 0, 0);
+	text-decoration:none;
+    z-index: 1001;
+}
+
+.header .menuppal> ul> li> a:hover {
+	background:#d4d4af;
+    border-radius: 10px;
+}
+
+.header .img-cabecera{    
+    display: flex;
+    position: absolute; 
+    margin: 86vw;
+    height:9vw;
+    transition-duration: 3s, 5s;
+}
+/*-------------- LISTA DESPLEGABLE CURSOS -----------------------------*/
+.cursos{
+    z-index: 1001;
+}
+
+.cursos> li{
+    padding: 5px 20px 5px 20px;
+    background-color: rgb(245, 231, 231);
+    border: rgb(172, 169, 169) solid;
+    border-radius: 10px;
+    z-index: 1001;
+}
+
+.cursos> li> a{
+    color: rgb(0, 0, 0);
+    font-size: 1.5vw;
+    text-decoration: none;
+    margin: 10px 5px 10px 0;
+    border-radius: 10px;
+    z-index: 1001;
+}
+
+.cursos> li:hover {
+    background:#d4d4af;       
+    text-decoration: none;
+}
+
+.nav >li> ul{
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.nav li:hover > ul {
+    display: inline-block;
+} 
+/*------------- GRID DE CURSOS ------------------------------*/
+.container {
+    height: 100vw;
+    width: 97vw;
+    display: grid;   
+    grid-template-areas:      
+    "b b b b b b b b b b b b"
+    "b b b b b b b b b b b b"
+    "a a a a a a a a a a a a"
+    "c c c c d d d d e e e e"
+    "f f f f g g g g h h h h";
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /*para que no se desborde cuando le coloco contenido*/
+    gap: 0.7rem;
+    border-radius: 10px;
+    margin: 0px 5px 5px 10px;
+}
+
+.s1 {
+    /* border: black solid; */
+    border-radius: 10px;
+    grid-area: a;
+    overflow: hidden;
+    background-image:url("../img/insAbiertas.jpg");    
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height:100%;
+}
+
+.s2 {
+    /* border: black solid; */
+    border-radius: 10px;
+    grid-area: b;
+    overflow: hidden;
+    background-image:url("../img/cabMedicosAzul1.jpeg");    
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height:100%;
+}
+
+.s2>h4{
+    display:none;
+}
+
+.s2>h2{
+    color: rgb(255, 255, 255);
+    text-shadow: 0.1em -0.1em 0.05em rgb(107, 90, 76);
+    position: absolute;
+    padding-left: 1rem;
+    margin: 30vw 15vw 0 15vw;
+    font-size: 2.5vw;
+    /* transition: 5s all; */
+} 
+
+.s3{
+    border-radius: 10px;
+    grid-area: c;
+    background-image:url("../img/cursos/paramedico1.jpg");  
+    background-size: cover;    
+    background-position: center;
+    width:100%;
+    height:100%;       
+}
+
+.s4{
+    border-radius: 10px;
+    grid-area: d;
+    overflow: hidden; 
+    background-image:url("../img/cursos/secretariado1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.s5{
+    border-radius: 10px;
+    grid-area: e;
+    overflow: hidden;
+    background-image:url("../img/cursos/terapiasAlternativas1.jpg");    
+    background-size: cover;
+    background-position: center;
+}  
+
+.s6{
+    border-radius: 10px;
+    grid-area: f;
+    background-image:url("../img/cursos/auxEnfermeria1.jpg");    
+    background-size: cover;
+    background-position: center;
+}
+
+.s7{
+    border-radius: 10px;
+    grid-area: g;
+    overflow: hidden; 
+    background-image:url("../img/cursos/auxFarmacia1.jpg");    
+    background-size: cover;
+    background-position: center;
+}
+
+.s8{
+    border-radius: 10px;
+    grid-area: h;
+    overflow: hidden; 
+    background-image:url("../img/cursos/auxEmergMedi1.jpg");    
+    background-size: cover;
+    background-position: center;
+}
+
+.s3>a, .s4>a, .s5>a, .s6>a, .s7>a, .s8>a{
+    color: rgb(255, 255, 255);
+    text-shadow: -0.1em -0.1em 0.05em rgb(107, 90, 76);
+    position: absolute;
+    font-size: 2.5vw;
+    font-weight:bold;
+    margin: 13vw -6vw;    
+    padding:0 2rem 2rem 5rem; 
+    border-radius: 20px;  
+    text-decoration: none;
+    z-index: 2; 
+}
+
+/* --------------- FOOTER ---------------*/
+/*------------MEITAL-------------*/
+
+/*------------------- MEDIA QUERY ----------------------------------------*/
