@@ -14,52 +14,121 @@
     gap: 1rem;
     border-radius: 10px;
     margin: 0px 5px 5px 10px;
+    /* justify-items: center;
+    align-items: center, */
     z-index: 1; 
 }
 /*Laura*/
 .sec-cabecera{
+    border-radius: 10px;
     grid-area: cab;
+    overflow: hidden;  
+    background-size: cover;
+    background-position: center; 
+    width:100%;
+    height:100%;
+    z-index: 1;
 }
 
 .sec-logo{
+    border-radius: 10px;
     grid-area: lo;
+    overflow: hidden; 
+    background-image:url("../img/fotoProfe.jpeg");
+    background-position: center; 
+    width:100%;
+    height:100%;
 }
 
 .sec1 {
+    border-radius: 10px;
     grid-area: aa;
+    overflow: hidden;
+    width:100%;
+    height:100%;
 }
 
 .sec2 {
+    border-radius: 10px;
     grid-area: bb;
+    overflow: hidden;
+    width:100%;
+    height:100%;
 }
 
 .sec3 {
+    border-radius: 10px;
     grid-area: cc;
+    overflow: hidden; 
+    width:100%;
+    height:100%;
 }
 
 .sec4 {
+    border-radius: 10px;
     grid-area: dd;
+    overflow: hidden;  
+    width:100%;
+    height:100%;
 }
 
 .sec5 {
-    grid-area: ee;    
+    border-radius: 10px;
+    grid-area: ee;
+    overflow: hidden; 
+    width:100%;
+    height:100%;
 }
 
 .sec6 {
+    border-radius: 10px;
     grid-area: ff;
-    
+    overflow: hidden; 
+    width:100%;
+    height:100%;
 }
 
-.sec7 {    
+.sec7 {
+    border-radius: 10px;
     grid-area: gg;
-    
+    overflow: hidden;
+    width:100%;
+    height:100%;
 }
 
+.sec1, .sec2, .sec3, .sec4, .sec5, .sec6, .sec7{
+    box-shadow: -0.1em -0.1em 0.05em rgb(107, 90, 76);    
+}
 
+.titulo-curso{
+    display:block;
+    font-size: 1.2vw;
+}
 
+.titulo-cabecera{
+    display:block;
+    font-size: 2.5vw;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+.titulo-cabecera>h1{
+    text-align: center;
+}
 
-
-
+.sec1>h2, .sec2>h2, .sec3>h2, .sec4>h2, .sec5>h2, .sec6>h2, .sec7>h2, .titulo-curso>h1{
+    text-align: center;
+}
+.sec1>p, .sec2>p, .sec3>p, .sec4>p, .sec5>p, .sec6>p, .sec7>p{
+    text-align: center;
+    font-size: 1.2vw;
+}
+.programa{
+    display:block;
+    color:rgb(137, 52, 52);
+}
+.descargas>a{
+    text-align: center;
+    font-size: 1.5vw;;
+}
 
 /******************* CARROUSEL **************************************/
 .slide {
