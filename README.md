@@ -260,66 +260,6 @@ http://localhost:8000
 
 ---
 
-## 🎓 Información Académica
-
-### Modalidades de Cursada
-- **Presencial**: Clases en nuestras 3 sedes
-- **Online**: Plataforma e-learning actualizada
-- **Híbrida**: Combinación de ambas modalidades
-
-### Certificación
-Todos los cursos otorgan **Título Oficial Avalado** reconocido en el sector salud.
-
-### Duración
-Los cursos tienen una duración de **8 a 12 meses** según la especialidad.
-
----
-
-## 📞 Información de Contacto
-
-- 📱 **Teléfono**: +54 351 123-4567
-- 📧 **Email**: info@salus.edu.ar
-- 📧 **Inscripciones**: inscripciones@salus.edu.ar
-- 📍 **Ubicación**: Córdoba, Argentina
-- ⏰ **Horario**: Lunes a Viernes 9:00-20:00 | Sábados 9:00-14:00
-
-### Sedes
-1. **Córdoba Capital** - Centro de la ciudad
-2. **Alta Gracia** - Las Flores 425
-3. **Cosquín** - Onofre Marimón 467
-
----
-
-## 🌟 Redes Sociales
-
-Seguinos en nuestras redes para estar al día con novedades, inscripciones y contenido educativo:
-
-- [Facebook](https://www.facebook.com)
-- [Instagram](https://www.instagram.com)
-- [Twitter](https://twitter.com)
-- [LinkedIn](https://www.linkedin.com)
-- [YouTube](https://www.youtube.com)
-
----
-
-## 🤝 Contribuciones
-
-Este proyecto fue desarrollado como parte del programa **Codo a Codo** por el Grupo 01.
-
-### Equipo de Desarrollo
-- Desarrollo Frontend
-- Diseño UI/UX
-- Contenido Académico
-- Testing y Optimización
-
----
-
-## 📄 Licencia
-
-Este proyecto es de código abierto y está disponible bajo la licencia MIT.
-
----
-
 ## 🙏 Agradecimientos
 
 - **Codo a Codo** - Programa de formación
@@ -350,11 +290,16 @@ Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 
 ---
 
-## 📧 Soporte
+## 👨‍💻 Autor
 
-Para soporte técnico o consultas académicas:
-- Email: info@salus.edu.ar
-- Formulario de contacto en el sitio web
+**Desarrollador**: Ludmila Martos
+
+## 📞 Contacto
+
+- **Email**: [ludmilamartos@gmail.com](mailto:ludmilamartos@gmail.com)
+- **LinkedIn**: [ludmimar89](https://www.linkedin.com/in/ludmimar89/)
+- **GitHub**: [Ludmimar](https://github.com/Ludmimar)
+
 
 ---
 
