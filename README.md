@@ -8,7 +8,7 @@
 
 **Plataforma educativa profesional dedicada a la formación en el área de la salud**
 
-[Ver Demo](#) | [Reportar Bug](#) | [Solicitar Característica](#)
+[Ver Demo](#) |
 
 </div>
 
