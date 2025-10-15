@@ -1,33 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curso de Auxiliar de Farmacia - Aprende sobre dispensación de medicamentos, atención al público y gestión farmacéutica. Inscripciones abiertas.">
     <link rel="stylesheet" type="text/css" href="css/estilos.css"> 
-    <link rel="stylesheet" type="text/css" href="css/estilosCursos.css">     
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/estilosCursos.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
-    <title>Auxiliar en Farmacia</title>
+    <title>Curso de Auxiliar de Farmacia - Salus</title>
 </head>
 <body>
     <header class="header">    
         <div class="img-cabecera">
-            <img src="img/logo.png" alt="">
+            <img src="img/logo.png" alt="Logo Salus - Plataforma Educativa">
         </div>
+
+        <!-- Botón Hamburguesa -->
+        <div class="menu_bar" id="menuToggle" aria-label="Menú de navegación" role="button" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
         <!--NAVBAR-->
-        <nav class="menuppal">
+        <nav class="menuppal" role="navigation" aria-label="Menú principal">
             <ul class="nav" type="none">
-                <li><a href="index.html">Inicio</a>
-                <li><a href="index.html">Cursos</a>
-                    <ul class="cursos" type="none">
-                        <li><a href="paramedico.html">Paramedico</a></li>
-                        <li><a href="secreSalud.html">Sec en Salud</a></li>
-                        <li><a href="teraAlter.html">Terap Alternativas</a></li>
-                        <li><a href="auxEnfermeria.html">Aux Enfermería</a></li>                        
-                        <li><a href="auxFarmacia.html">Aux Farmacia</a></li>
-                        <li><a href="auxEmerMedi.html">Aux Emerg Medicas</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li class="menu-item-has-children">
+                    <a href="#" aria-haspopup="true" aria-expanded="false">Cursos</a>
+                    <ul class="cursos" type="none" role="menu">
+                        <li role="menuitem"><a href="paramedico.html">Paramédico</a></li>
+                        <li role="menuitem"><a href="secreSalud.html">Secretariado en Salud</a></li>
+                        <li role="menuitem"><a href="teraAlter.html">Terapias Alternativas</a></li>
+                        <li role="menuitem"><a href="auxEnfermeria.html">Aux. Enfermería</a></li>                        
+                        <li role="menuitem"><a href="auxFarmacia.html">Aux. Farmacia</a></li>
+                        <li role="menuitem"><a href="auxEmerMedi.html">Aux. Emergencias Médicas</a></li>
                     </ul>
                 </li>
                 <li><a href="nosotros.html">Nosotros</a></li>
@@ -43,17 +53,17 @@
                     <input class="slide-open" type="radio" id="slide-1" 
                         name="slide" aria-hidden="true" hidden="" checked="checked">
                     <div class="slide-item">
-                        <img src="img/insAbiertas11.jpg">
+                        <img src="img/insAbiertas11.jpg" alt="Inscripciones abiertas">
                     </div>
                     <input class="slide-open" type="radio" id="slide-2" 
                         name="slide" aria-hidden="true" hidden="">
                     <div class="slide-item">
-                        <img src="img/insAbiertas12.jpg">
+                        <img src="img/insAbiertas12.jpg" alt="Promoción especial">
                     </div>
                     <input class="slide-open" type="radio" id="slide-3" 
                         name="slide" aria-hidden="true" hidden="">
                     <div class="slide-item">
-                        <img src="img/insAbiertas13.jpg">
+                        <img src="img/insAbiertas13.jpg" alt="Certificación oficial">
                     </div>
                     <label for="slide-3" class="slide-control prev control-1">‹</label>
                     <label for="slide-2" class="slide-control next control-1">›</label>
@@ -75,15 +85,119 @@
                 </div>
             </div>
         </section>
-        <!--SECCIONES CADA CURSO-->
-        <!--Laura secciones-->
+        <!--INFORMACIÓN DEL CURSO-->
+        <section class="sec-logo">
+            <div class="course-logo">
+                <img src="img/cursos/auxFarmacia1.jpg" alt="Curso de Auxiliar de Farmacia">
+            </div>
+        </section>
+        
+        <section class="sec1">
+            <div class="course-info">
+                <h2><i class="bx bx-book-open"></i> Sobre el Curso</h2>
+                <p>El curso de Auxiliar de Farmacia te forma en la dispensación y gestión de medicamentos. Aprenderás sobre farmacología, atención al público, control de stock, recetarios y legislación farmacéutica vigente.</p>
+            </div>
+        </section>
 
+        <section class="sec2">
+            <div class="course-details">
+                <h3><i class="bx bx-time"></i> Duración</h3>
+                <p>9 meses</p>
+            </div>
+        </section>
+
+        <section class="sec3">
+            <div class="course-details">
+                <h3><i class="bx bx-calendar"></i> Modalidad</h3>
+                <p>Presencial y Online</p>
+            </div>
+        </section>
+
+        <section class="sec4">
+            <div class="course-details">
+                <h3><i class="bx bx-certification"></i> Certificación</h3>
+                <p>Título Oficial Avalado</p>
+            </div>
+        </section>
+
+        <section class="sec5">
+            <div class="course-highlights">
+                <h3><i class="bx bx-star"></i> Lo que Aprenderás</h3>
+                <ul>
+                    <li><i class="bx bx-check-circle"></i> Dispensación de Medicamentos</li>
+                    <li><i class="bx bx-check-circle"></i> Farmacología Básica</li>
+                    <li><i class="bx bx-check-circle"></i> Gestión de Stock y Vencimientos</li>
+                    <li><i class="bx bx-check-circle"></i> Atención al Cliente</li>
+                    <li><i class="bx bx-check-circle"></i> Legislación Farmacéutica</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="sec6">
+            <div class="course-cta">
+                <h3>¿Listo para comenzar?</h3>
+                <a href="contacto.html" class="btn-inscripcion">
+                    <i class="bx bx-right-arrow-circle"></i> Inscríbete Ahora
+                </a>
+            </div>
+        </section>
+
+        <section class="sec7">
+            <div class="course-requirements">
+                <h3><i class="bx bx-list-check"></i> Requisitos</h3>
+                <ul>
+                    <li>Mayor de 18 años</li>
+                    <li>Secundario completo</li>
+                    <li>Responsabilidad y ética profesional</li>
+                    <li>Buena comunicación oral</li>
+                </ul>
+            </div>
+        </section>
     </div> 
+    
     <!--FOOTER-->
-    <!--Meital-->
-    <footer>   
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Salus</h3>
+                <p>Plataforma educativa líder en formación profesional en salud con más de 10 años de experiencia.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="bx bx-phone"></i> +54 351 123-4567</p>
+                <p><i class="bx bx-envelope"></i> info@salus.edu.ar</p>
+                <p><i class="bx bx-map"></i> Córdoba, Argentina</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook"><i class="bx bxl-facebook-circle"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Suscríbete en YouTube"><i class="bx bxl-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Salus - Plataforma Educativa. Todos los derechos reservados.</p>
+        </div>
     </footer>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <!-- Botón volver arriba -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba">
+        ▲
+    </button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="js/logica.js"></script>
 </body>
 </html>

@@ -1,11 +1,43 @@
+:root {
+    --primary-color: #a8edea;
+    --secondary-color: #fed6e3;
+    --accent-color: #ca87cc;
+    --text-color: #333;
+    --bg-color: #E5E5E5;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --transition-speed: 0.3s;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding:0;    
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-	background: #E5E5E5;
+	background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Source Code Pro', monospace;
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(168, 237, 234, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(254, 214, 227, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
 } 
 
 .divider {
@@ -18,216 +50,729 @@ body {
 
 /*----------------- CABECERA --------------------------*/
 .header {
-    display:flex;    
-    justify-content: end;  
+    display: flex;    
+    justify-content: space-between;  
     align-items: center;       
-    height:8vw; 
+    height: auto;
+    min-height: 80px;
     width: 100%;   
-	margin:10px;
+    padding: 1rem 2rem;
 	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
     border-radius: 10px;   
     font-family: 'Source Code Pro', monospace;
+    position: sticky;
+    top: 0;
     z-index: 1001;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin: 10px;
 }
 
-.menu_bar {
-	display:none;
+.header.scrolled {
+    background: rgba(168, 237, 234, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-.header .menuppal >ul {
-	list-style:none;
-	overflow:hidden;
-}
-
-.header .menuppal> ul> li {
-	float: left;
-    display: inline;
-    padding:10px;
-    color:rgb(0, 0, 0);
-	text-decoration:none;
-}
-
-.header .menuppal> ul> li> a{
-    font-size: 2vw;
-	display:block;
-	padding:15px;
-	color:rgb(0, 0, 0);
-	text-decoration:none;
-    z-index: 1001;
-}
-
-.header .menuppal> ul> li> a:hover {
-	background:#d4d4af;
-    border-radius: 10px;
-}
-
-.header .img-cabecera{    
+.header .img-cabecera {    
     display: flex;
-    position: absolute; 
-    margin: 86vw;
-    height:9vw;
-    transition-duration: 3s, 5s;
+    align-items: center;
+    height: 60px;
+    transition: all 0.3s ease;
+    z-index: 1002;
+}
+
+.header .img-cabecera img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Menú Hamburguesa */
+.menu_bar {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1002;
+    transition: all 0.3s ease;
+}
+
+.menu_bar span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.menu_bar.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu_bar.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu_bar.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Navegación Principal */
+.header .menuppal {
+    display: flex;
+    align-items: center;
+}
+
+.header .menuppal > ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.header .menuppal > ul > li {
+    position: relative;
+    display: inline-block;
+}
+
+.header .menuppal > ul > li > a {
+    font-size: 1.1rem;
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.header .menuppal > ul > li > a:hover {
+    background: rgba(212, 212, 175, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 /*-------------- LISTA DESPLEGABLE CURSOS -----------------------------*/
-.cursos{
-    z-index: 1001;
-}
-
-.cursos> li{
-    padding: 5px 20px 5px 20px;
-    background-color: rgb(245, 231, 231);
-    border: rgb(172, 169, 169) solid;
-    border-radius: 10px;
-    z-index: 1001;
-}
-
-.cursos> li> a{
-    color: rgb(0, 0, 0);
-    font-size: 1.5vw;
-    text-decoration: none;
-    margin: 10px 5px 10px 0;
-    border-radius: 10px;
-    z-index: 1001;
-}
-
-.cursos> li:hover {
-    background:#d4d4af;       
-    text-decoration: none;
-}
-
-.nav >li> ul{
+.cursos {
     display: none;
     position: absolute;
-    min-width: 140px;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 0;
+    min-width: 220px;
+    z-index: 1001;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
 }
 
-.nav li:hover > ul {
-    display: inline-block;
+.nav li:hover > .cursos {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cursos > li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.cursos > li > a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.cursos > li:hover {
+    background: #f5f5f5;
+}
+
+.cursos > li:hover > a {
+    color: #667eea;
+    border-left-color: #667eea;
+    padding-left: 25px;
 } 
 /*------------- GRID DE CURSOS ------------------------------*/
 .container {
-    height: 100vw;
-    width: 97vw;
+    max-width: 1400px;
+    width: 95%;
+    margin: 2rem auto;
+    padding: 0 1rem;
     display: grid;   
     grid-template-areas:      
-    "b b b b b b b b b b b b"
     "b b b b b b b b b b b b"
     "a a a a a a a a a a a a"
     "c c c c d d d d e e e e"
     "f f f f g g g g h h h h";
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /*para que no se desborde cuando le coloco contenido*/
-    gap: 0.7rem;
+    grid-template-rows: minmax(300px, 35vh) minmax(200px, 25vh) minmax(250px, 30vh) minmax(250px, 30vh);
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
     border-radius: 10px;
-    margin: 0px 5px 5px 10px;
 }
 
 .s1 {
-    /* border: black solid; */
-    border-radius: 10px;
+    border-radius: 15px;
     grid-area: a;
     overflow: hidden;
-    background-image:url("../img/insAbiertas.jpg");    
+    background-image: url("../img/insAbiertas.jpg");    
     background-size: cover;
     background-position: center;
-    width:100%;
-    height:100%;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.s1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
 .s2 {
-    /* border: black solid; */
-    border-radius: 10px;
+    border-radius: 15px;
     grid-area: b;
     overflow: hidden;
-    background-image:url("../img/cabMedicosAzul1.jpeg");    
+    background-image: url("../img/cabMedicosAzul1.jpeg");    
     background-size: cover;
     background-position: center;
-    width:100%;
-    height:100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
-.s2>h4{
-    display:none;
-}
-
-.s2>h2{
-    color: rgb(255, 255, 255);
-    text-shadow: 0.1em -0.1em 0.05em rgb(107, 90, 76);
+.s2::before {
+    content: '';
     position: absolute;
-    padding-left: 1rem;
-    margin: 30vw 15vw 0 15vw;
-    font-size: 2.5vw;
-    /* transition: 5s all; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.s2 > * {
+    position: relative;
+    z-index: 2;
+}
+
+.s2 > h4 {
+    display: none;
+}
+
+.s2 > h2 {
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    max-width: 800px;
+    margin: 0;
+    line-height: 1.4;
 } 
 
-.s3{
-    border-radius: 10px;
+.s3 {
+    border-radius: 15px;
     grid-area: c;
-    background-image:url("../img/cursos/paramedico1.jpg");  
+    background-image: url("../img/cursos/paramedico1.jpg");  
     background-size: cover;    
     background-position: center;
-    width:100%;
-    height:100%;       
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.s4{
-    border-radius: 10px;
+.s4 {
+    border-radius: 15px;
     grid-area: d;
     overflow: hidden; 
-    background-image:url("../img/cursos/secretariado1.jpg");
+    background-image: url("../img/cursos/secretariado1.jpg");
     background-size: cover;
     background-position: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.s5{
-    border-radius: 10px;
+.s5 {
+    border-radius: 15px;
     grid-area: e;
     overflow: hidden;
-    background-image:url("../img/cursos/terapiasAlternativas1.jpg");    
+    background-image: url("../img/cursos/terapiasAlternativas1.jpg");    
     background-size: cover;
     background-position: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }  
 
-.s6{
-    border-radius: 10px;
+.s6 {
+    border-radius: 15px;
     grid-area: f;
-    background-image:url("../img/cursos/auxEnfermeria1.jpg");    
+    background-image: url("../img/cursos/auxEnfermeria1.jpg");    
     background-size: cover;
     background-position: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.s7{
-    border-radius: 10px;
+.s7 {
+    border-radius: 15px;
     grid-area: g;
     overflow: hidden; 
-    background-image:url("../img/cursos/auxFarmacia1.jpg");    
+    background-image: url("../img/cursos/auxFarmacia1.jpg");    
     background-size: cover;
     background-position: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.s8{
-    border-radius: 10px;
+.s8 {
+    border-radius: 15px;
     grid-area: h;
     overflow: hidden; 
-    background-image:url("../img/cursos/auxEmergMedi1.jpg");    
+    background-image: url("../img/cursos/auxEmergMedi1.jpg");    
     background-size: cover;
     background-position: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.s3>a, .s4>a, .s5>a, .s6>a, .s7>a, .s8>a{
-    color: rgb(255, 255, 255);
-    text-shadow: -0.1em -0.1em 0.05em rgb(107, 90, 76);
+.curso-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    cursor: pointer;
+}
+
+.curso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.curso-card::before {
+    content: '';
     position: absolute;
-    font-size: 2.5vw;
-    font-weight:bold;
-    margin: 13vw -6vw;    
-    padding:0 2rem 2rem 5rem; 
-    border-radius: 20px;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease;
+    z-index: 1;
+}
+
+.curso-card:hover::before {
+    opacity: 1;
+}
+
+.s3 > a, .s4 > a, .s5 > a, .s6 > a, .s7 > a, .s8 > a {
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: bold;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     text-decoration: none;
-    z-index: 2; 
+    transition: all var(--transition-speed) ease;
+    display: flex;
+    align-items: flex-end;
+    z-index: 2;
+}
+
+/* Asegurar que el texto esté por encima del área clickeable */
+.s3 > a > *, .s4 > a > *, .s5 > a > *, 
+.s6 > a > *, .s7 > a > *, .s8 > a > * {
+    position: relative;
+    z-index: 11;
+}
+
+/* Hacer que toda la tarjeta sea clickeable */
+.s3 > a::after, 
+.s4 > a::after, 
+.s5 > a::after, 
+.s6 > a::after, 
+.s7 > a::after, 
+.s8 > a::after {
+    content: '';
+    position: absolute;
+    top: -1000px;  /* Extiende hacia arriba para cubrir toda la tarjeta */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2000px; /* Altura suficientemente grande */
+    z-index: 10;
+}
+
+.curso-card:hover a {
+    padding-bottom: 2.5rem;
+    background: linear-gradient(to top, rgba(102, 126, 234, 0.9), transparent);
 }
 
 /* --------------- FOOTER ---------------*/
-/*------------MEITAL-------------*/
+.footer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem 1rem 1rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: white;
+    font-size: 2rem;
+    transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    transform: scale(1.2) rotate(5deg);
+    color: var(--primary-color);
+}
+
+.social-links a:nth-child(1):hover { color: #1877f2; } /* Facebook */
+.social-links a:nth-child(2):hover { color: #E4405F; } /* Instagram */
+.social-links a:nth-child(3):hover { color: #1DA1F2; } /* Twitter */
+.social-links a:nth-child(4):hover { color: #0A66C2; } /* LinkedIn */
+.social-links a:nth-child(5):hover { color: #FF0000; } /* YouTube */
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --------------- SCROLL TO TOP BUTTON ---------------*/
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent-color), #9b59b6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-speed) ease;
+    z-index: 1000;
+    line-height: 1;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #9b59b6, var(--accent-color));
+}
+
+.scroll-to-top:active {
+    transform: translateY(-3px) scale(1);
+}
+
+.scroll-to-top.show {
+    display: flex;
+}
+
+/* --------------- ANIMATIONS ---------------*/
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container section {
+    animation: fadeInUp 0.6s ease;
+}
+
+.container section:nth-child(1) { animation-delay: 0.1s; }
+.container section:nth-child(2) { animation-delay: 0.2s; }
+.container section:nth-child(3) { animation-delay: 0.3s; }
+.container section:nth-child(4) { animation-delay: 0.4s; }
+.container section:nth-child(5) { animation-delay: 0.5s; }
+.container section:nth-child(6) { animation-delay: 0.6s; }
+.container section:nth-child(7) { animation-delay: 0.7s; }
+.container section:nth-child(8) { animation-delay: 0.8s; }
 
 /*------------------- MEDIA QUERY ----------------------------------------*/
+/* Tablet */
+@media (max-width: 992px) {
+    .header {
+        padding: 1rem 1.5rem;
+    }
+
+    .header .menuppal > ul > li > a {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    .header .img-cabecera {
+        height: 50px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .menu_bar {
+        display: flex;
+    }
+
+    .header .img-cabecera {
+        height: 45px;
+    }
+
+    .header .menuppal {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: white;
+        padding: 80px 0 2rem;
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+        transition: left 0.3s ease;
+        overflow-y: auto;
+    }
+
+    .header .menuppal.is_active {
+        left: 0;
+    }
+
+    .header .menuppal > ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .header .menuppal > ul > li {
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .header .menuppal > ul > li > a {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+        border-radius: 0;
+    }
+
+    .header .menuppal > ul > li > a:hover {
+        background: #f8f8f8;
+        transform: none;
+        box-shadow: none;
+    }
+
+    /* Dropdown móvil */
+    .cursos {
+        position: static;
+        display: none;
+        background: #f8f8f8;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        opacity: 1;
+        transform: none;
+    }
+
+    .nav li.active > .cursos {
+        display: block;
+    }
+
+    .cursos > li {
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .cursos > li:last-child {
+        border-bottom: none;
+    }
+
+    .cursos > li > a {
+        padding: 12px 25px 12px 45px;
+        font-size: 0.95rem;
+    }
+
+    .cursos > li:hover > a {
+        border-left: none;
+        padding-left: 45px;
+        background: #e8e8e8;
+    }
+
+    /* Overlay cuando el menú está abierto */
+    .header .menuppal.is_active::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    /* Grid principal */
+    .container {
+        width: 98%;
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+        gap: 1rem;
+        grid-template-areas:      
+        "b b b b b b b b b b b b"
+        "a a a a a a a a a a a a"
+        "c c c c c c d d d d d d"
+        "e e e e e e f f f f f f"
+        "g g g g g g h h h h h h";
+        grid-template-rows: minmax(250px, 30vh) minmax(150px, 20vh) repeat(3, minmax(200px, 25vh));
+    }
+
+    .s2 > h2 {
+        font-size: 1.3rem;
+        padding: 1rem;
+    }
+
+    .s3>a, .s4>a, .s5>a, .s6>a, .s7>a, .s8>a {
+        font-size: 1.1rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Mobile pequeño */
+@media (max-width: 480px) {
+    .header {
+        margin: 5px;
+        padding: 0.8rem;
+    }
+
+    .header .img-cabecera {
+        height: 40px;
+    }
+
+    .menu_bar span {
+        width: 25px;
+        height: 2.5px;
+    }
+
+    .header .menuppal {
+        width: 85%;
+    }
+
+    .container {
+        gap: 0.8rem;
+        grid-template-areas:      
+        "b b b b b b b b b b b b"
+        "a a a a a a a a a a a a"
+        "c c c c c c c c c c c c"
+        "d d d d d d d d d d d d"
+        "e e e e e e e e e e e e"
+        "f f f f f f f f f f f f"
+        "g g g g g g g g g g g g"
+        "h h h h h h h h h h h h";
+        grid-template-rows: minmax(200px, 25vh) minmax(120px, 15vh) repeat(6, minmax(180px, 22vh));
+    }
+
+    .s2 > h2 {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+    }
+
+    .s3>a, .s4>a, .s5>a, .s6>a, .s7>a, .s8>a {
+        font-size: 1rem;
+        padding: 1.2rem 1rem;
+    }
+}

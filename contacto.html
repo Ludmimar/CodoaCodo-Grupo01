@@ -1,33 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con Salus para más información sobre nuestros cursos de salud. Estamos aquí para ayudarte.">
     <link rel="stylesheet" type="text/css" href="css/estilos.css">    
     <link rel="stylesheet" type="text/css" href="css/estilosContacto.css">   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <title>Contacto</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Contacto - Salus</title>
 </head>
 <body>
     <header class="header">    
         <div class="img-cabecera">
-            <img src="img/logo.png" alt="">
+            <img src="img/logo.png" alt="Logo Salus - Plataforma Educativa">
+        </div>
+
+        <!-- Botón Hamburguesa -->
+        <div class="menu_bar" id="menuToggle" aria-label="Menú de navegación" role="button" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>        
+        
         <!--NAVBAR-->
-        <nav class="menuppal">
+        <nav class="menuppal" role="navigation" aria-label="Menú principal">
             <ul class="nav" type="none">
-                <li><a href="index.html">Inicio</a>
-                <li><a href="index.html">Cursos</a>
-                    <ul class="cursos" type="none">
-                        <li><a href="paramedico.html">Paramedico</a></li>
-                        <li><a href="secreSalud.html">Sec en Salud</a></li>
-                        <li><a href="teraAlter.html">Terap Alternativas</a></li>
-                        <li><a href="auxEnfermeria.html">Aux Enfermería</a></li>                        
-                        <li><a href="auxFarmacia.html">Aux Farmacia</a></li>
-                        <li><a href="auxEmerMedi.html">Aux Emerg Medicas</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li class="menu-item-has-children">
+                    <a href="#" aria-haspopup="true" aria-expanded="false">Cursos</a>
+                    <ul class="cursos" type="none" role="menu">
+                        <li role="menuitem"><a href="paramedico.html">Paramédico</a></li>
+                        <li role="menuitem"><a href="secreSalud.html">Secretariado en Salud</a></li>
+                        <li role="menuitem"><a href="teraAlter.html">Terapias Alternativas</a></li>
+                        <li role="menuitem"><a href="auxEnfermeria.html">Aux. Enfermería</a></li>                        
+                        <li role="menuitem"><a href="auxFarmacia.html">Aux. Farmacia</a></li>
+                        <li role="menuitem"><a href="auxEmerMedi.html">Aux. Emergencias Médicas</a></li>
                     </ul>
                 </li>
                 <li><a href="nosotros.html">Nosotros</a></li>
@@ -35,15 +45,201 @@
             </ul>
         </nav>
     </header>   
-    <!--Meital-->
+    
+    <!-- MAIN CONTENT -->
+    <main class="contact-container">
+        <section class="contact-hero">
+            <h1>Contáctanos</h1>
+            <p>Estamos aquí para ayudarte. Envíanos tu consulta y te responderemos a la brevedad.</p>
+        </section>
+
+        <div class="contact-wrapper">
+            <!-- CONTACT FORM -->
+            <section class="contact-form-section">
+                <h2>Envíanos un mensaje</h2>
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="bx bx-user"></i> Nombre Completo *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Ingresa tu nombre completo"
+                            required
+                            aria-required="true"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="bx bx-envelope"></i> Email *
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="tucorreo@ejemplo.com"
+                            required
+                            aria-required="true"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">
+                            <i class="bx bx-phone"></i> Teléfono *
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="+54 351 123-4567"
+                            required
+                            aria-required="true"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="curso">
+                            <i class="bx bx-book"></i> Curso de Interés
+                        </label>
+                        <select id="curso" name="curso">
+                            <option value="">Selecciona un curso (opcional)</option>
+                            <option value="paramedico">Paramédico</option>
+                            <option value="secretariado">Secretariado en Salud</option>
+                            <option value="terapias">Terapias Alternativas</option>
+                            <option value="enfermeria">Aux. Enfermería</option>
+                            <option value="farmacia">Aux. Farmacia</option>
+                            <option value="emergencias">Aux. Emergencias Médicas</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">
+                            <i class="bx bx-message-detail"></i> Mensaje *
+                        </label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="6" 
+                            placeholder="Escribe tu consulta aquí..."
+                            required
+                            aria-required="true"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i class="bx bx-send"></i> Enviar Mensaje
+                    </button>
+                </form>
+            </section>
+
+            <!-- CONTACT INFO -->
+            <section class="contact-info-section">
+                <h2>Información de Contacto</h2>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bx bx-map"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Ubicación</h3>
+                        <p>Córdoba, Argentina</p>
+                        <p>Contamos con 3 sedes</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bx bx-phone"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Teléfono</h3>
+                        <p>+54 351 123-4567</p>
+                        <p>Lunes a Viernes: 9:00 - 18:00</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bx bx-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>info@salus.edu.ar</p>
+                        <p>inscripciones@salus.edu.ar</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bx bx-time"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Horario de Atención</h3>
+                        <p>Lunes a Viernes: 9:00 - 20:00</p>
+                        <p>Sábados: 9:00 - 14:00</p>
+                    </div>
+                </div>
+
+                <div class="social-contact">
+                    <h3>Síguenos en Redes Sociales</h3>
+                    <div class="social-links-contact">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook"><i class="bx bxl-facebook-circle"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="https://wa.me/5493511234567" target="_blank" rel="noopener noreferrer" aria-label="Contáctanos por WhatsApp"><i class="bx bxl-whatsapp"></i></a>
+                        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Suscríbete en YouTube"><i class="bx bxl-youtube"></i></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
     
     <!--FOOTER-->
-    <!--Meital-->
-    <footer>   
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Salus</h3>
+                <p>Plataforma educativa líder en formación profesional en salud con más de 10 años de experiencia.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="bx bx-phone"></i> +54 351 123-4567</p>
+                <p><i class="bx bx-envelope"></i> info@salus.edu.ar</p>
+                <p><i class="bx bx-map"></i> Córdoba, Argentina</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook"><i class="bx bxl-facebook-circle"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Suscríbete en YouTube"><i class="bx bxl-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Salus - Plataforma Educativa. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- Botón volver arriba -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba">
+        ▲
+    </button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="js/logica.js"></script> 
-    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
 </html>
